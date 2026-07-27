@@ -1,3 +1,5 @@
+package com.library.model;
+
 import java.util.Objects;
 
 public class Book {
@@ -40,9 +42,7 @@ public class Book {
         this.author = author;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
-    }
+    public boolean isAvailable() {return isAvailable; }
 
     public void setAvailable(boolean available) {
         isAvailable = available;
@@ -50,7 +50,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "com.library.model.Book{" +
                 "isbn='" + isbn + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +

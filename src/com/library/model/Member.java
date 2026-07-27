@@ -1,3 +1,5 @@
+package com.library.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +41,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Member{" +
+        return "com.library.model.Member{" +
                 "memberId='" + memberId + '\'' +
                 ", name='" + name + '\'' +
                 ", borrowedBooks=" + borrowedBooks +
