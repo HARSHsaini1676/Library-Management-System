@@ -41,7 +41,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "com.library.model.Member{" +
+        return "Member{" +
                 "memberId='" + memberId + '\'' +
                 ", name='" + name + '\'' +
                 ", borrowedBooks=" + borrowedBooks +

@@ -50,7 +50,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "com.library.model.Book{" +
+        return "Book{" +
                 "isbn='" + isbn + '\'' +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +

@@ -44,6 +44,14 @@ public class Library {
         return null;
     }
 
+    public List<Book> getAllBooks(){
+        return new ArrayList<>(books);
+    }
+
+    public List<Member> getAllMembers(){
+        return new ArrayList<>(members);
+    }
+
     public void borrowBook(String isbn, String memberId) throws BookNotAvailableException, MemberNotFoundException {
         Book book = findBook(isbn);
         Member member = findMember(memberId);
@@ -52,11 +60,11 @@ public class Library {
         }
 
         if(member == null){
-            throw new MemberNotFoundException("com.library.model.Member not found with memberId: " + memberId);
+            throw new MemberNotFoundException("Member not found with memberId: " + memberId);
         }
 
         if(!book.isAvailable()){
-            throw new BookNotAvailableException("com.library.model.Book is already borrowed");
+            throw new BookNotAvailableException("Book is already borrowed");
         }
         book.setAvailable(false);
 
@@ -71,10 +79,10 @@ public class Library {
             throw new BookNotAvailableException("No book found with ISBN: " + isbn);
         }
         if (member == null) {
-            throw new MemberNotFoundException("com.library.model.Member not found with memberId: " + memberId);
+            throw new MemberNotFoundException("Member not found with memberId: " + memberId);
         }
         if (book.isAvailable()) {
-            throw new BookNotAvailableException("com.library.model.Book was not borrowed, cannot return");
+            throw new BookNotAvailableException("Book was not borrowed, cannot return");
         }
 
         book.setAvailable(true);
