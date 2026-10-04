@@ -15,12 +15,13 @@ public class Main {
         Library library = new Library();
         FileService fileService = new FileService();
 
-        List<Book> loadedBooks = fileService.loadBooks("books.txt");
+        String dataDir = "src/com/library/txtFiles/";
+        List<Book> loadedBooks = fileService.loadBooks(dataDir + "books.txt");
         for (Book book : loadedBooks) {
             library.addBook(book);
         }
 
-        List<Member> loadedMembers = fileService.loadMembers(library, "members.txt");
+        List<Member> loadedMembers = fileService.loadMembers(library, dataDir + "members.txt");
         for (Member member : loadedMembers) {
             library.registerMember(member);
         }
@@ -136,8 +137,8 @@ public class Main {
                     break;
 
                 case 7:
-                    fileService.saveBooks(library.getAllBooks(), "books.txt");
-                    fileService.saveMembers(library.getAllMembers(), "members.txt" );
+                    fileService.saveBooks(library.getAllBooks(), dataDir + "books.txt");
+                    fileService.saveMembers(library.getAllMembers(), dataDir + "members.txt");
                     running = false;
                     System.out.println("Good Bye");
                     break;
